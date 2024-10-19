@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="servicioSetter" class="com.ebac.modulo61.components.ServicioSetter">
+        <property name="model" ref="claseModel"/>
+    </bean>
+
+    <bean id="claseModel" class="com.ebac.modulo61.components.Model" />
+
+    <bean id="servicioConstructor" class="com.ebac.modulo61.components.ServicioConstructor">
+        <constructor-arg ref="claseModel"/>
+    </bean>
+
+    <bean id="servicioAnotacion" class="com.ebac.modulo61.components.ServicioAnotacion"/>
+
+</beans>
